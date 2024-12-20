@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Calculator</title>
+
+    <!-- CSS Styling -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 320px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 22px;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="button"] {
+            width: 45%;
+            padding: 10px;
+            margin: 10px 5px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        input[type="button"]:active {
+            background-color: #1e6f9f;
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        function add() {
+            let s1 = Number(document.getElementById("n1").value);
+            let s2 = Number(document.getElementById("n2").value);
+            let result = s1 + s2;
+            alert("Addition is: " + result);
+        }
+
+        function sub() {
+            let s1 = Number(document.getElementById("n1").value);
+            let s2 = Number(document.getElementById("n2").value);
+            let result = s1 - s2;
+            alert("Subtraction is: " + result);
+        }
+
+        function mul() {
+            let s1 = Number(document.getElementById("n1").value);
+            let s2 = Number(document.getElementById("n2").value);
+            let result = s1 * s2;
+            alert("Multiplication is: " + result);
+        }
+
+        function div() {
+            let s1 = Number(document.getElementById("n1").value);
+            let s2 = Number(document.getElementById("n2").value);
+            if (s2 === 0) {
+                alert("Division by zero is not allowed!");
+            } else {
+                let result = s1 / s2;
+                alert("Division is: " + result);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="calculator-container">
+        <h2> Calculator</h2>
+        <input type="text" id="n1" placeholder="Enter first number"><br>
+        <input type="text" id="n2" placeholder="Enter second number"><br>
+
+        <input type="button" value="Addition" onclick="add()">
+        <input type="button" value="Subtraction" onclick="sub()">
+        <input type="button" value="Multiplication" onclick="mul()">
+        <input type="button" value="Division" onclick="div()">
+    </div>
+</body>
+</html>
